@@ -4,7 +4,7 @@
 
 <div class="card-columns">
 
-  <app-nota-tarjeta (notaSeleccionada)="verNota( $event )" [nota]="foo" [index]="i"  *ngFor="let foo of notas; let i = index"></app-nota-tarjeta>
+  <app-nota-tarjeta (notaSeleccionada)="verNota( $event )" [nota]="foo" [index]="foo.id"  *ngFor="let foo of notas; let i = index"></app-nota-tarjeta>
 
 
 </div>

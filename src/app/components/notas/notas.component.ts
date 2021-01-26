@@ -8,21 +8,31 @@ import { Router } from '@angular/router';
 })
 export class NotasComponent implements OnInit {
 
-  notas:Nota[] = [];
+  notas: Nota[] = [];
 
-  constructor( private _notasService:NotesService,
-               private router:Router
-                ) {
+  constructor(
+    private _notasService: NotesService,
+    private router: Router
+  ) {
     // console.log("constructor");
   }
 
   ngOnInit() {
-    this.notas = this._notasService.getNotas();
+    //this.notas = this._notasService.getNotas();
     // console.log( this.heroes );
+    /* this._notasService.getNotas()
+    .subscribe(notas => this.notas = notas); */
+
+    this._notasService.getNotas()
+      .subscribe(_ => {
+
+        this._notasService.notas$.subscribe(notas => this.notas = notas);
+
+      });
   }
 
-  verNota( idx:number ){
-    this.router.navigate( ['/nota',idx] );
+  verNota(idx: number) {
+    this.router.navigate(['/nota', idx]);
   }
 
 }

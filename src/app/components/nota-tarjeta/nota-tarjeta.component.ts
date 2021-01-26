@@ -21,8 +21,8 @@ export class NotaTarjetaComponent implements OnInit {
 
   vernota() {
     // console.log(  this.index );
-    this.router.navigate( ['/nota', this.index] );
-    // this.heroeSeleccionado.emit( this.index );
+    //this.router.navigate( ['/nota', this.index] );
+    this.notaSeleccionada.emit( this.index );
   }
 
 }

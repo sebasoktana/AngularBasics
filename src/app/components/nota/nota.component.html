@@ -8,11 +8,12 @@
     <img src="assets/img/note1.png" class="img-fluid" [alt]="nota.nombre">
     <br><br>
     <a [routerLink]="['/notas']" class="btn btn-outline-danger btn-block">Regresar</a>
+    <a (click)="eliminarNota()" class="btn btn-danger btn-block">Eliminar</a>
 
   </div>
 
   <div class="col-md-8">
-    <h3>{{ nota.fecha }}</h3>
+    <h3>{{ nota.fecha | date : 'dd-MM-yyyy hh:mm:ss'}}</h3>
     <hr>
     <p>
       {{ nota.text }}
